@@ -11,8 +11,8 @@ public class Daemon {
 
 	public static void main(String[] args) {
 		
-		String filesLocation = "D:/RFID/jukebox-data/";
-		String playMusicCommand = "cmd.exe /c start /b ";
+		String filesLocation = "~/jukebox/data/";
+		String playMusicCommand = "mpg123 -C ";
 		
 		Scanner inputScanner = new Scanner(System.in);
 		
