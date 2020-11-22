@@ -32,6 +32,8 @@ public class Daemon {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+			} else {
+				System.out.println("... "+ filePathString + " not found");
 			}
 			System.out.println("----");
 		});
