@@ -1,9 +1,6 @@
 package com.imolczek.rfid.jukebox.daemon;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
@@ -25,18 +22,22 @@ public class Daemon {
 			System.out.println("----");
 			System.out.println(matchResult.group());
 			String filePathString = filesLocation + matchResult.group() + ".mp3";
+
+			try {
+				String command = playMusicCommand + filePathString;
+				System.out.println(command);
+				Runtime.getRuntime().exec(command);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+			/*
 			Path path = Paths.get(filePathString);
 			if(Files.exists(path)) { 
-				try {
-					String command = playMusicCommand + filePathString;
-					System.out.println(command);
-					Runtime.getRuntime().exec(command);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
 			} else {
 				System.out.println("... "+ filePathString + " not found");
 			}
+			*/
 			System.out.println("----");
 		});
 
