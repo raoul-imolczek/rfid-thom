@@ -19,8 +19,8 @@ public class Daemon {
 		Stream<MatchResult> distinct = inputScanner.findAll(pattern).distinct();
 		
 		distinct.forEach(matchResult -> {
-			System.out.println("----");
-			System.out.println(matchResult.group());
+			//System.out.println("----");
+			//System.out.println(matchResult.group());
 			String filePathString = filesLocation + matchResult.group() + ".mp3";
 
 			try {
